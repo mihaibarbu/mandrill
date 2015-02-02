@@ -29,10 +29,9 @@ foreach($csv as $nume=>$email)
     Best,
     Vlad 
 
-
-
     Founder and CEO
     http://startupkit.io
+
 
 
     P.S. We are working hard on Startupkit V3.0 this time on mobile, you’ll get details soon.
@@ -44,13 +43,11 @@ foreach($csv as $nume=>$email)
         'from_name' => 'Vlad Stan',
         'to' => array(
             array(
-                //'email' => $_POST['email'],
-                'email' => '$email[0]',
+                'email' => $email[0],
                 'type' => 'to'
             )
         ),
     );
-    //$result = $mandrill->messages->send($message);
+    $result = $mandrill->messages->send($message);
     print_r($result);
-    print_r('email');
 }
